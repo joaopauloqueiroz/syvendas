@@ -19,4 +19,10 @@ class Sale extends Model
     {
         return $this->hasOne('App\Models\Payment', 'payment_id');
     }
+
+    //relacionamento com a tabela de maixas
+    public function baixado()
+    {
+        return $this->hasOne('App\Models\Sale', 'order_cli');
+    }
 }
