@@ -20,8 +20,9 @@ class CreateSalesTable extends Migration
             $table->integer('amount');
             $table->float('value', 8, 2);
             $table->float('total');
-            $table->integer('client_id');
             $table->date('date');
+            $table->integer('client_id');
+            $table->integer('payment_id');
             //pago ou não
             $table->integer('status');
             $table->timestamps();

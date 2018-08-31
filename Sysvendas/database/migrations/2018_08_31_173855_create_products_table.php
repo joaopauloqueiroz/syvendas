@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->enum('type', ['UNI', 'POTE']);
             $table->float('value', 8, 2);
             $table->float('price_vend', 8, 2);
+            $table->date('date');
             $table->timestamps();
         });
     }
