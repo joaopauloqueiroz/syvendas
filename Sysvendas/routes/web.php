@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +15,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/produtos', 'HomeController@cadastro')->name('produtos');
+Route::get('/fornecedor', 'HomeController@fornecedor')->name('fornecedores');
+Route::get('/relatorio/produtos', 'HomeController@Rprodutos')->name('relatorio.produtos');
+Route::get('/relatorio/vendas', 'HomeController@Rvendas')->name('relatorio.vendas');
+Route::get('/contas/pagar', 'HomeController@pagar')->name('contas.pagar');
+Route::get('/contas/receber', 'HomeController@receber')->name('contas.receber');
+Route::get('/vendas', 'HomeController@vender')->name('vendas');
+Route::post('/vendas/fim', 'HomeController@teste')->name('vender');

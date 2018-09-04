@@ -62,33 +62,36 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            h1 a{
+                text-decoration: none;
+                color: #636b6f;
+                text-transform: uppercase;
+            }
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+           
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Sysvendas
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    @if (Route::has('login'))
+                        @auth
+                        <a href="{{ route('vendas') }}">Vender</a>
+                        <a href="{{ route('produtos') }}">Produtos</a>
+                        <a href="{{ route('fornecedores') }}">Fornecedores</a>
+                        <a href="{{ route('relatorio.produtos') }}">Relatorio de Estoque</a>
+                        <a href="{{ route('relatorio.vendas') }}">Relatorio de vendas</a>
+                        <a href="{{ route('contas.pagar') }}">Contas a pagar</a>
+                        <a href="{{ route('contas.receber') }}">Contas a Receber</a>
+                        @else
+                            <h1><a href="{{ route('login') }}">Login</a></h1>
+                        @endauth
+                @endif
                 </div>
             </div>
         </div>

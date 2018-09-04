@@ -15,12 +15,11 @@ class CreateProvidersTable extends Migration
     {
         Schema::create('providers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 100);
-            $table->integer('cnpj', 14);
-            $table->string('email')->unique();
+            $table->string('name', 60);
+            $table->integer('cnpj')->length(14);
+            $table->string('email');
             $table->string('address', 100);
-            $table->integer('telephone', 11);
-            $table->string('type', 40);
+            $table->integer('telephone')->length(11);
             $table->timestamps();
         });
     }
