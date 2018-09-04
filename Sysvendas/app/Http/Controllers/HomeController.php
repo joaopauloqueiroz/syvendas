@@ -60,6 +60,7 @@ class HomeController extends Controller
     }
     public function teste(Request $request)
     {
+        
         for ($i = 0; $i <= $request->count; $i++) {
             $array = [
                    "order" => $request->order,
