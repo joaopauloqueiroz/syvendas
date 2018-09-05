@@ -27,3 +27,5 @@ Route::get('/contas/pagar', 'HomeController@pagar')->name('contas.pagar');
 Route::get('/contas/receber', 'HomeController@receber')->name('contas.receber');
 Route::get('/vendas', 'HomeController@vender')->name('vendas');
 Route::post('/vendas/fim', 'HomeController@teste')->name('vender');
+
+Route::post('/products/find/', 'SearchProduct\SearchProduct');

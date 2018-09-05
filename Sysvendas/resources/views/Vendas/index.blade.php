@@ -6,30 +6,28 @@
 <script src="{{asset('js/jquery-2.1.1.js')}}"></script>
 <script src="{{asset('js/jquery.mask.js')}}"></script>
 <script src="{{asset('js/vendas.js')}}"></script>
+
 <form action="{{route('vender')}}" method="post">
   @csrf
   <div class="col-md-12">
     <div class="form-group apend">
       <label for="product">Produto</label>
-      <input type="text" name="product-0" list="listaProd" class="form-control" placeholder="Produto" style="max-width: 60%;">
+      <input type="text" id="prod" onblur="valores(this);" name="search" list="listaProd" class="form-control busc" placeholder="Produto" style="max-width: 60%;">
       <datalist id="listaProd">
-        <option value="Produto 1">Produto 1</option>
-        <option value="Sabonete">Sabonete</option>
-        <option value="Arroz">Arroz</option>
       </datalist>
       <div class="form-group" style="width: 10%; float: right; margin-top: -67px;">
           <label for="amount">Total</label>
-          <input type="number" value="" readonly name="valor-0" class="form-control tot" placeholder="R$">
+          <input type="number" value="" readonly name="valor0" class="form-control tot" placeholder="R$">
         </div>
         
         <div class="form-group" style="width: 10%; float: right; margin-top: -67px; margin-right: 3%;">
             <label for="amount">Unidade/Pote</label>
-            <input type="number" value="20.00" readonly name="uni-pt-0" class="form-control" placeholder="R$">
+            <input type="number" value="20.00" id="valorU" readonly name="unipt0" class="form-control" placeholder="R$">
           </div>
           
           <div class="form-group" style="width: 10%; float: right; margin-top: -67px; margin-right: 3%;">
               <label for="amount">Quantidade</label>
-              <input type="number" name="amount-0" class="form-control" placeholder="Qtd" onblur="calculo(this, 0)">
+              <input type="number" name="amount0" class="form-control" placeholder="Qtd" onblur="calculo(this, 0)">
             </div>
             
           </div>
@@ -43,4 +41,5 @@
           </div>
         </form>
         <button id="btn-mais" class="btn btn-danger" style="float: right; font-size: 16pt; font-weight: bold; border-radius: 31px; width: 50px; margin-right: -10%; margin-top: -4%;">+</button>
+          
         @endsection
