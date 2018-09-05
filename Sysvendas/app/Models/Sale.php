@@ -6,7 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sale extends Model
 {
-    protected $fillable = ['order','name','amount','value','total','date','client_id','payment_id','status'];
+    protected $fillable = [
+        'order',
+        'name',
+        'amount',
+        'value',
+        'total',
+        'date',
+        'client_id',
+        'payment_id',
+        'status'
+    ];
 
     //relaciona com a tabela de cliente
     public function cliente()
@@ -20,7 +30,7 @@ class Sale extends Model
         return $this->hasOne('App\Models\Payment', 'payment_id');
     }
 
-    //relacionamento com a tabela de maixas
+    //relacionamento com a tabela de baixas
     public function baixado()
     {
         return $this->hasOne('App\Models\Sale', 'order_cli');
