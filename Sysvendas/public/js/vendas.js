@@ -5,7 +5,7 @@ $(document).ready(function($){
         e.preventDefault();
         var obj = '<div class="form-group">\
         <label for="product">Produto</label>\
-        <input type="text" id="prod" data-value="" name="product'+controle+'" list="listaProd" class="form-control busc" placeholder="Produto" style="max-width: 60%;">\
+        <input type="search" id="prod" data-value="" name="product'+controle+'" list="listaProd" class="form-control busc" placeholder="Produto" style="max-width: 60%;">\
         <datalist id="listaProd">\
         </datalist>\
         <div class="form-group" style="width: 10%; float: right; margin-top: -67px;">\
@@ -46,5 +46,5 @@ $(document).ready(function($){
     
     //colocar o valor no campo unidade/pote
 function valores(obj){
-    console.log(obj.parent('datalist'));
+    console.log(obj.list.length);
 }

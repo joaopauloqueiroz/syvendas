@@ -8,16 +8,17 @@
 <script src="{{asset('js/vendas.js')}}"></script>
 
 <form action="{{route('vender')}}" method="post">
+  
   @csrf
   <div class="col-md-12">
     <div class="form-group apend">
       <label for="product">Produto</label>
-      <input type="text" id="prod" onblur="valores(this);" name="search" list="listaProd" class="form-control busc" placeholder="Produto" style="max-width: 60%;">
+      <input type="text" id="prod" value="" onchange="valores(this);" name="search" list="listaProd" class="form-control busc" placeholder="Produto" style="max-width: 60%;">
       <datalist id="listaProd">
       </datalist>
       <div class="form-group" style="width: 10%; float: right; margin-top: -67px;">
           <label for="amount">Total</label>
-          <input type="number" value="" readonly name="valor0" class="form-control tot" placeholder="R$">
+          <input type="number" value="" readonly name="valor0" class="form-control tot" placeholder="R$"> 
         </div>
         
         <div class="form-group" style="width: 10%; float: right; margin-top: -67px; margin-right: 3%;">
@@ -41,5 +42,4 @@
           </div>
         </form>
         <button id="btn-mais" class="btn btn-danger" style="float: right; font-size: 16pt; font-weight: bold; border-radius: 31px; width: 50px; margin-right: -10%; margin-top: -4%;">+</button>
-          
         @endsection
