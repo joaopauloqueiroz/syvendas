@@ -13,7 +13,7 @@ class EloquentProduct implements SearchProductInterface
     {
         $subject = '%' . $subject . '%';
         return DB::table($this->table)
-                   ->select('name', 'code', 'value')
+                   ->select('name', 'code', 'price_vend')
                    ->where('name', 'like', $subject)
                    ->get();
     }

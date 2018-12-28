@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 100);
-            $table->integer('code')->inique();
+            $table->integer('code')->unique();
             $table->enum('type', ['UNI', 'POTE']);
             $table->float('value', 8, 2);
             $table->float('price_vend', 8, 2);

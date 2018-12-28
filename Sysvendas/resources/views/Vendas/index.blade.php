@@ -6,29 +6,31 @@
 <script src="{{asset('js/jquery-2.1.1.js')}}"></script>
 <script src="{{asset('js/jquery.mask.js')}}"></script>
 <script src="{{asset('js/vendas.js')}}"></script>
+<script src="{{asset('js/search.js')}}"></script>
 
 <form action="{{route('vender')}}" method="post">
   
   @csrf
   <div class="col-md-12">
+    <div class="alert alert-danger" id="erro">A quantidade precisa ser maior que 0 (zero).</div>
     <div class="form-group apend">
       <label for="product">Produto</label>
-      <input type="text" id="prod" value="" onchange="valores(this);" name="search" list="listaProd" class="form-control busc" placeholder="Produto" style="max-width: 60%;">
+      <input type="text" id="0" value="" onchange="valores(this);" name="search" list="listaProd" class="form-control busc" placeholder="Produto" style="max-width: 60%;">
       <datalist id="listaProd">
       </datalist>
       <div class="form-group" style="width: 10%; float: right; margin-top: -67px;">
           <label for="amount">Total</label>
-          <input type="number" value="" readonly name="valor0" class="form-control tot" placeholder="R$"> 
+          <input type="number" id="total_0" value="" readonly name="valor0" class="form-control tot" placeholder="R$"> 
         </div>
         
         <div class="form-group" style="width: 10%; float: right; margin-top: -67px; margin-right: 3%;">
             <label for="amount">Unidade/Pote</label>
-            <input type="number" value="20.00" id="valorU" readonly name="unipt0" class="form-control" placeholder="R$">
+            <input type="number" id="valor_0" value="R$" readonly name="unipt0" class="form-control" placeholder="R$">
           </div>
           
           <div class="form-group" style="width: 10%; float: right; margin-top: -67px; margin-right: 3%;">
               <label for="amount">Quantidade</label>
-              <input type="number" name="amount0" class="form-control" placeholder="Qtd" onblur="calculo(this, 0)">
+              <input type="number" id="qtd_0" name="amount0" class="form-control" placeholder="Qtd" onblur="calculo(this, 0)">
             </div>
             
           </div>

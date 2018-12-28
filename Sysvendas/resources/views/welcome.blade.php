@@ -82,7 +82,7 @@
                     @if (Route::has('login'))
                         @auth
                         <a href="{{ route('vendas') }}">Vender</a>
-                        <a href="{{ route('produtos') }}">Produtos</a>
+                        <a href="{{ route('products.create') }}">Cadastrar Produtos</a>
                         <a href="{{ route('fornecedores') }}">Fornecedores</a>
                         <a href="{{ route('relatorio.produtos') }}">Relatorio de Estoque</a>
                         <a href="{{ route('relatorio.vendas') }}">Relatorio de vendas</a>

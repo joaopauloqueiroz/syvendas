@@ -10,7 +10,7 @@ class SearchProduct extends Controller
     public function __invoke(SearchProductInterface $buscas, Request $request)
     {
         $da = $request->except('_token');
-        $cd;
+        
         foreach ($da as $key => $value) {
             $cd = $key;
             break;

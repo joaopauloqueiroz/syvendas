@@ -10439,7 +10439,7 @@ return jQuery;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(2);
-module.exports = __webpack_require__(7);
+module.exports = __webpack_require__(6);
 
 
 /***/ }),
@@ -10452,7 +10452,7 @@ try {
     __webpack_require__(3);
 } catch (e) {}
 
-__webpack_require__(6);
+//require('./search.js');
 
 /***/ }),
 /* 3 */
@@ -16974,35 +16974,6 @@ module.exports = g;
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports) {
-
-$(document).ready(function () {
-  $(this).keyup(function (e) {
-    e.preventDefault();
-    $.ajax({
-      url: "http://127.0.0.1:8000/products/find/",
-      dataType: "json",
-      type: "POST",
-      data: {
-        search: $('#prod').val()
-      },
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      },
-      success: function success(result) {
-        var items = '';
-        for (var i in result) {
-          items += '<option onclick="valores(this);" value="' + result[i]['name'] + '">' + result[i]['code'] + '</oprion>';
-        }
-        $('#listaProd').html(items);
-      }
-
-    });
-  });
-});
-
-/***/ }),
-/* 7 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

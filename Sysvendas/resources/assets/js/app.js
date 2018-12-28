@@ -4,4 +4,4 @@ try {
     require('bootstrap');
 } catch (e) {}
 
-require('./search.js');
+//require('./search.js');
