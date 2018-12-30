@@ -1,7 +1,7 @@
 <?php
 namespace App\Repositories\Interfaces;
 
-interface SaleInterface
+interface PedidoInterface
 {
-   //silence is gold
+    //silence is gold
 }

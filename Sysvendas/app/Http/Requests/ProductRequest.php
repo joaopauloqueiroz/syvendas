@@ -29,6 +29,7 @@ class ProductRequest extends FormRequest
             'code' => 'required|unique:products',
             'type' => 'required',
             'value' => 'required|numeric',
+            'quantidade' => 'required|numeric',
 
         ];
     }

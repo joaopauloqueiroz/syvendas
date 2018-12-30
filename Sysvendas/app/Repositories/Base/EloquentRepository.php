@@ -3,7 +3,7 @@ namespace App\Repositories\Base;
 
 use App\Repositories\Base\InterfaceRepository;
 
-class EloquentRepository extends InterfaceRepository
+class EloquentRepository implements InterfaceRepository
 {
     /**
      * Model para ser tratada
@@ -31,11 +31,7 @@ class EloquentRepository extends InterfaceRepository
     public function find($id)
     {
         $data = $this->model->find($id);
-        if (count($data)) {
-            return $data;
-        } else {
-            return false;
-        }
+        return $data;
     }
     /**
      * Insere um array de registros
@@ -45,7 +41,7 @@ class EloquentRepository extends InterfaceRepository
      */
     public function create(array $data)
     {
-        return $this->model->insert($data);
+        return $this->model->create($data);
     }
     /**
      * Atualiza um registro

@@ -38,5 +38,20 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\Interfaces\SaleInterface',
             'App\Repositories\Implementations\EloquentSale'
         );
+
+        $this->app->bind(
+            'App\Repositories\Interfaces\PedidoInterface',
+            'App\Repositories\Implementations\PedidoProduct'
+        );
+
+        $this->app->bind(
+            'App\Repositories\Interfaces\StockInterface',
+            'App\Repositories\Implementations\ControleStock'
+        );
+
+        $this->app->bind(
+            'App\Repositories\Interfaces\OrderInterface',
+            'App\Repositories\Implementations\EloquentOrder'
+        );
     }
 }

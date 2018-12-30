@@ -26,6 +26,10 @@
       <input type="number" name="code" placeholder="Código do produto" class="form-control" value="{{old('code')}}">
     </div>
     <div class="form-group">
+      <label for="value">Quantidade</label>
+      <input type="number" name="quantidade" class="form-control quantidade"  placeholder="Quantidade de Produtos" value="{{old('quantidade')}}">
+    </div>
+    <div class="form-group">
       <label for="type">Tipo de produto</label>
         <select name="type" selected="selected" class="form-control" placeholder="Tipo de produto">
           <option value="UNI">UNI</option>

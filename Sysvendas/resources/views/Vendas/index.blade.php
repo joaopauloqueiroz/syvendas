@@ -12,10 +12,39 @@
   
   @csrf
   <div class="col-md-12">
+      <div class="estoque">
+
+        </div>
+    {{-- Modal --}}
+  
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn_modal" data-toggle="modal" data-target="#exampleModalLong"></button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header alert alert-danger">
+          <h5 class="modal-title" id="exampleModalLongTitle">Erro!!!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         <p>Por favor verifique a quantidade disponivel na mensagem a cima.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    {{-- Fim Modal --}}
     <div class="alert alert-danger" id="erro">A quantidade precisa ser maior que 0 (zero).</div>
     <div class="form-group apend">
       <label for="product">Produto</label>
-      <input type="text" id="0" value="" onchange="valores(this);" name="search" list="listaProd" class="form-control busc" placeholder="Produto" style="max-width: 60%;">
+      <input type="text" id="0" value="" onchange="valores(this);" name="product0" list="listaProd" class="form-control busc" placeholder="Produto" style="max-width: 60%;">
       <datalist id="listaProd">
       </datalist>
       <div class="form-group" style="width: 10%; float: right; margin-top: -67px;">
