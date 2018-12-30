@@ -30,4 +30,5 @@ Route::post('/products/find/', 'SearchProduct\SearchProduct');
 //verificar quantidade disponivel
 Route::post('/stock/amount','Stock\StockController@verifyQtd')->name('verificaQuantidade');
 Route::resource('/products', 'Products\ProductsController');
+Route::resource('/providers', 'Providers\ProvidersController');
 

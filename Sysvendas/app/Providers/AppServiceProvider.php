@@ -53,5 +53,10 @@ class AppServiceProvider extends ServiceProvider
             'App\Repositories\Interfaces\OrderInterface',
             'App\Repositories\Implementations\EloquentOrder'
         );
+
+        $this->app->bind(
+            'App\Repositories\Interfaces\ProviderIterface',
+            'App\Repositories\Implementations\EloquentProvider'
+        );
     }
 }
