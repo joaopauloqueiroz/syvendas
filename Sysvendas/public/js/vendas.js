@@ -2,7 +2,7 @@
 $(document).ready(function ($) {
     $('#erro').hide();
     $('.btn_modal').hide();
-    var controle = 1;
+    var controle = 0;
     $('#btn-mais').click(function (e) {
         e.preventDefault();
         var obj = '<div class="form-group">\
@@ -29,12 +29,21 @@ $(document).ready(function ($) {
         controle++;
     });
 
+    $('#removeItem').click(function(){
+       if(controle==1){
+        $( "#0" ).prop( "disabled", true );
+        $( "#qtd_0" ).prop("disabled", true);
+       }else{
+        $( "#"+controle ).prop( "disabled", true );
+        $( "#qtd_"+controle ).prop("disabled", true);
+       }
+    })
 });
 
 
 function calculo(dom, id) {
     var campo = document.getElementById(dom.id);
-    if (dom.value <= 0) {
+    if (dom.value < 0) {
         $('#erro').show();
         campo.focus();
     } else {
