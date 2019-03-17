@@ -2,7 +2,7 @@
 $(document).ready(function ($) {
     $('#erro').hide();
     $('.btn_modal').hide();
-    var controle = 0;
+    var controle = 1;
     $('#btn-mais').click(function (e) {
         e.preventDefault();
         var obj = '<div class="form-group">\
@@ -30,6 +30,7 @@ $(document).ready(function ($) {
     });
 
     $('#removeItem').click(function(){
+        console.log($('#removeItem'));
        if(controle==1){
         $( "#0" ).prop( "disabled", true );
         $( "#qtd_0" ).prop("disabled", true);

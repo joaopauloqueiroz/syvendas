@@ -151,6 +151,7 @@ class ProductsController extends Controller
                     "total" => $request->$total,
                     "date"  => date('Y-m-d'),
                     "client_id" => 1,
+                    "status" => 0,
                 ];
 
                 $id = $this->order->create($form);
@@ -158,6 +159,7 @@ class ProductsController extends Controller
                 $nPedido = $this->order->find($id->id)->order;
         }
 
+        return redirect()->route('vendas')->with('success', 'Pedido realizado com sucesso.');
         
     }
 }

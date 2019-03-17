@@ -13,6 +13,7 @@ class Order extends Model
         "value",
         "total",
         "date",
+        "status",
         "client_id"
     ];
 }

@@ -11,6 +11,12 @@
 <form action="{{route('vender')}}" method="post">
   
   @csrf
+  @if(session('success'))
+            <div class="alert alert-success">
+                {!!session('success')!!}
+            </div>
+            @endif
+            
   <div class="col-md-12">
       <div class="estoque">
 
